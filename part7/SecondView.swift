@@ -11,8 +11,9 @@ struct SecondView: View {
     var body: some View {
         ZStack {
             Color(.orange)
+            Text("Second View")
+
         }
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
