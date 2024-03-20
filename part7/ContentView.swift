@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isShowThirdView = false
     var body: some View {
         NavigationView {
             VStack {
@@ -15,6 +16,15 @@ struct ContentView: View {
                     .padding()
                 NavigationLink(destination: SecondView().navigationTitle("画面2")){
                     Text("Second Viewへ")
+                }
+                Button(action:{
+                    isShowThirdView = true
+                }){
+                    Text("モーダル遷移")
+                        .padding()
+                }
+                .sheet(isPresented: $isShowThirdView){
+                    ThirdView()
                 }
             }
                 .navigationTitle("画面1")
